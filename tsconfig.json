@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "esnext",
+    "outDir": "dist",
+    "rootDir": "src",
+    "baseUrl": "src",
+    "lib": ["esnext", "dom"],
+    "strict": true,
+
+  },
+  "include": ["src/**/*"]
+}
