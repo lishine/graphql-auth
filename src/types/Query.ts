@@ -8,7 +8,7 @@ export const Query = queryType({
 			nullable: true,
 			resolve: (parent, args, ctx) => {
 				const userId = getUserId(ctx)
-				return ctx.photon.user.findOne({
+				return ctx.client.user.findOne({
 					where: {
 						id: userId,
 					},
@@ -19,7 +19,7 @@ export const Query = queryType({
 		t.list.field('feed', {
 			type: 'Post',
 			resolve: (parent, args, ctx) => {
-				return ctx.photon.post.findMany({
+				return ctx.client.post.findMany({
 					where: { published: true },
 				})
 			},
@@ -31,7 +31,7 @@ export const Query = queryType({
 				searchString: stringArg({ nullable: true }),
 			},
 			resolve: (parent, { searchString }, ctx) => {
-				return ctx.photon.post.findMany({
+				return ctx.client.post.findMany({
 					where: {
 						OR: [
 							{
@@ -55,7 +55,7 @@ export const Query = queryType({
 			nullable: true,
 			args: { id: idArg() },
 			resolve: (parent, { id }, ctx) => {
-				return ctx.photon.post.findOne({
+				return ctx.client.post.findOne({
 					where: {
 						id,
 					},

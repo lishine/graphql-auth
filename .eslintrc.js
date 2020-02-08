@@ -4,8 +4,8 @@ module.exports = {
 		ecmaVersion: 9,
 		sourceType: 'module',
 		ecmaFeatures: {
-			jsx: true
-		}
+			jsx: true,
+		},
 	},
 
 	extends: [
@@ -15,53 +15,36 @@ module.exports = {
 		'plugin:prettier/recommended',
 		'plugin:import/errors',
 		'plugin:import/warnings',
-		'plugin:import/typescript'
+		'plugin:import/typescript',
 	],
-	plugins: [
-		'@typescript-eslint',
-		'prettier',
-		'import'
-	],
+	plugins: ['@typescript-eslint', 'prettier', 'import'],
 	env: {
-		node: true
+		node: true,
 	},
 	settings: {
 		'import/parsers': {
-			'@typescript-eslint/parser': [
-				'.ts',
-				'.tsx'
-			]
+			'@typescript-eslint/parser': ['.ts', '.tsx'],
 		},
 		'import/resolver': {
 			typescript: {},
-			node: {
-				paths: ['./src']
-			}
 		},
 		react: {
-			version: 'detect'
-		}
+			version: 'detect',
+		},
 	},
 	rules: {
+		'@typescript-eslint/explicit-function-return-type': 0,
 		'react/jsx-filename-extension': [
 			2,
 			{
-				extensions: [
-					'.js',
-					'.jsx',
-					'.ts',
-					'.tsx'
-				]
-			}
+				extensions: ['.js', '.jsx', '.ts', '.tsx'],
+			},
 		],
 		'import/no-extraneous-dependencies': [
 			2,
 			{
-				devDependencies: [
-					'**/test.tsx',
-					'**/test.ts'
-				]
-			}
+				devDependencies: ['**/test.tsx', '**/test.ts'],
+			},
 		],
 		'handle-callback-err': 0,
 		'no-undef': 2,
@@ -71,8 +54,8 @@ module.exports = {
 		'import/namespace': [
 			1,
 			{
-				allowComputed: true
-			}
+				allowComputed: true,
+			},
 		],
 		'import/named': 1,
 		'import/no-named-default': 0,
@@ -99,8 +82,8 @@ module.exports = {
 				useTabs: true,
 				trailingComma: 'es5',
 				jsxBracketSameLine: false,
-				jsxSingleQuote: true
-			}
-		]
-	}
+				jsxSingleQuote: true,
+			},
+		],
+	},
 }
